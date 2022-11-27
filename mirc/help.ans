@@ -1,0 +1,353 @@
+
+  |15Global
+
+|07  |11/?       |08 :|03 Help Screen... Obviously... :)
+|07  |11CTRL - U |08 :|03 Show Channel Users
+|07  |11TAB      |08 :|03 If User List is showing it will insert the selected User Name to
+|07  |11         |08  |03 the command line. If not, it will insert the name of the current
+|07  |11         |08  |03 channel.
+|07  |11CTRL - S |08 :|03 Enable/Disable Spelling Correction
+|07          
+  |15 User List
+|07  
+  |11PGDN,PGUP|07 |08:|07 |03Select Next/Previous User in User List
+|07  
+  
+  |15 Command Line
+|07  
+  |11ESC      |08 :|07 |03Erases command line
+|07  |11UP/DOWN  |08 :|07 |03Next/Previous Command - Command History
+|07  |11CTRL - W |08 :|07 |03Backspace one word
+|07  |11F1..F9   |08 :|07 |03Select Channel
+
+
+
+|07 |09‹‹‹|01‹|07                                              |09‹|01‹|07       
+|09€|17±|07|16 |01ﬂﬂ|07                                              |09|17±|01|16€|07       
+|09|17∞|01|16€|07     |09‹|17ﬂ|01|16ﬂ€‹|07  |09€|17ﬂ|01|16ﬂ€‹ﬂ€‹|07  |09€|17ﬂ|01|16ﬂ€‹ﬂ€‹|07  |09‹|17ﬂ|01|16ﬂ€€|07  |09€|17ﬂ|01|16ﬂ€‹|07  |09‹|17≤|16ﬂ|17∞|01|16€|07  |09‹€ﬂﬂ|01€
+€€|07 |09|17∞|01|16€|07  |09|17∞|01|16€|07 |01€€|07  |09|17∞|01|16€|07 |01€€|07 |01€€|07  |09|17∞|01|16€|07 |01€€|07 |01€€|07  |09|17∞|01|16€|07 |01€€|07  |09|17∞|01|16€|07 |01€€|07  |09|17±∞|07|16 |01€€|07  |01‹|07 |01ﬂ€‹
+|07 |01ﬂﬂﬂﬂ|00 |07  |01ﬂﬂﬂ|07 |00 |07 |01ﬂﬂ|07 |01ﬂﬂ|07 |01ﬂﬂ|00 |07 |01ﬂﬂ|07 |01ﬂﬂ|07 |01ﬂﬂ|00 |07  |01ﬂﬂ|07 |01ﬂ|00 |07 |01ﬂﬂ|07 |01ﬂﬂ|00 |07  |01ﬂﬂﬂ|07 |00 |07 |01ﬂﬂﬂﬂﬂ
+
+|00  |15Application Only
+
+|11/QUIT
+|03Closes the IRC connection
+
+|11/EXIT
+|03Closes the IRC connection and exit the application
+
+|00  |15IRC Commands
+
+|11/USER [ident] [local host] [remote host] :[GECOS]
+|03This command is used by your client to register your IRC session. You should 
+not use it during an established connection.
+
+|11/NICK [new nick]
+|03Change your nickname to [new nick].
+
+|11/QUIT {reason}
+|03Quit from IRC and end your current session with the given message.
+
+|11/VERSION {servermask}
+|03Returns the server's version number and information. Always provide this 
+information with any bug reports to The Bugtracker! If a servername is given, 
+the remote server's version information is shown. Not all software supports 
+remote versioning and may not return a version string. If you provide a 
+wildcard string, the first server which matches will be shown.
+
+|11/PING [server]
+|03Ping a server. Target server will answer with a PONG.
+
+|11/PONG [server]
+|03Your client should send this to answer server PINGs. You should not issue this 
+command manually.
+
+|11/ADMIN [server]
+|03Fetches the administrative information on the given server.
+
+|11/INFO
+|03Returns information on the developers and supporters who made this IRC server 
+possible.
+
+|11/PRIVMSG [target-list] [text]
+|03Sends a message to a user or channel specified in [target]. You may not send
+messages to channels which have the +n mode set unless you are a member of the
+channel or are connecting from a ulined connection.
+
+|11/NOTICE [target-list] [text]
+|03Sends a notice to a user or channel specified in [target]. You may not send 
+notices to channels which have the +n mode set unless you are a member of the 
+channel or are connecting from a ulined connection.
+
+|11/JOIN [channel]{,[channel]} [key]{,[key]}
+|03Joins one or more channels you provide the names for. The key is optional.
+
+|11/NAMES [channel]{,[channel]}
+|03Return a list of users on the channels you provide. If the channel is +s, you 
+must be on the channel to perform this command.
+
+|11/PART [channel]{,[channel]}
+|03Leaves one or more channels you specify.
+
+|11/KICK [channel] [nick] {reason}
+|03Kicks a user from a channel you specify. You must be at least a channel 
+halfoperator (%) to kick a user, where halfop is enabled, or a channel 
+operator (@) otherwise.
+
+|11/MODE [target] [+|-][modes]{[+|-][modes]} {mode parameters}
+|03Sets the mode for a channel or a nickname specified in [target] A user may only
+set modes upon themselves, and may not set the +o usermode, and a user may only
+change channel modes of channels where they are at least a halfoperator.
+
+|11/TOPIC [channel] {topic}
+|03Sets or retrieves the channel topic. If a channel topic is given in the command
+and the channel is either not +t, or you are at least a halfoperator, the
+channel topic will be changed to the new one you provide.
+
+|11/WHO [ [search-pattern] [ohurmaiMplf] ]
+|03Looks up the information of users matching the range you provide. You may only 
+|11/WHO nicknames in channels or on servers where you share a common channel with
+|03them, or ones which are not +i (unless you are an IRC operator). The 
+search-pattern may be a special sequence of characters determined by the flags 
+given below, or it may be one of a nickname, a channel, a hostmask, an ip
+address mask or a server mask.
+
+|10WHO flags
+|03The following flags after the mask have the following affects:
+o |00        |03Show online IRC operators matching the mask
+u |00        |03Unlimit the results past the maximum /who results value (IRC operator
+ only)
+r |00        |03Show all users whos realnames match the mask. When this flag is set i
+ overrides the meaning of the search-pattern, which must contain a glob pattern
+intended to match GECOS (realname) fields.
+h |00        |03Show real hostnames rather than masked hostnames (IRC operators only)
+m |00        |03Search for all users with a given set of user modes. When this flag i
+ set it overrides the meaning of the search-pattern, which must contain the mod
+ sequence to search for, for example to find all users with +i and without +s, 
+ssue the command WHO +i-s m.
+a |00        |03Show all users who's away message matches the given mask
+p |00        |03Show all users who are connected on the given port range
+i |00        |03Show all users whos ident (username) matches the given mask
+M |00        |03Show all users who have metadata attached to them with the given key 
+ame
+l |00        |03Show only local users
+f |00        |03Show only remote (far) users
+
+You may combine multiple flags in one WHO command except where stated in the 
+table above.
+|10Examples
+|03Show all local users with modes 'ix' but without mode 's'.
+|11/WHO +ix-s ml
+|03Show all users whos GECOS matches 'hiding*person' who are not on the local serv
+r
+|11/WHO hiding*person rf
+|03Show all users with SSL client certs (will not show any users unless you have a
+ SSL module loaded)
+|11/WHO ssl_cert M
+|03Show all users connected on ports within the range 6660 through 6668, 6679 or 6
+80.
+|11/WHO 6660-6668,6679,6680 p
+
+/MOTD {server}
+|03Show the message of the day for [server]. Messages of the day contain important
+server rules and notice and should be read before using a server in any way!
+
+|11/RULES
+|03Show the rules file for the local server. This is similar in effect to /MOTD 
+except that rules are optional. All users are sent the MOTD when they connect 
+without having to request it.
+
+|11/OPER [login] [password]
+|03Attempts to authenticate a user as an IRC operator. Please be aware that both 
+successful and unsucessful oper attempts are logged, and sent to online IRC 
+operators
+
+|11/LIST {pattern}
+|03Creates a list of all existing channels matching the glob pattern [pattern], 
+e.g. *chat* or bot*
+
+|11/LUSERS
+|03Shows a count of local and remote users, servers and channels.
+
+|11/STATS [symbol] {server}
+|03Shows various server statistics. Depending on configuration this command may be
+reserved for oper-only use. Note that all /STATS use is broadcast to online IRC
+operators. If a server parameter is given, the stats output from the servername
+you provide is returned instead of that of the local server.
+
+|11/STATS characters
+|03c |00        |03Show link blocks
+e |00        |03Show e-lines (local ban exemptions)
+g |00        |03Show g-lines (global bans)
+k |00        |03Show k-lines (local bans)
+l |00        |03Show all client connections with information and host
+L |00        |03Show all client connections with information and IP address
+m |00        |03Show command statistics, number of times commands have been used
+o |00        |03Show a list of all valid oper usernames and hostmasks
+q |00        |03Show q-lines (nick mask bans)
+u |00        |03Show server uptime
+s |00        |03Show filter definitions, when an m_filter* module is loaded
+T |00        |03Show bandwidth/socket statistics
+I |00        |03Show connect class permissions
+P |00        |03Show online opers and their idle times
+p |00        |03Show open client ports, and the port type (ssl, plaintext, etc)
+U |00        |03Show u-lined servers
+y |00        |03Show connection classes
+z |00        |03Show memory usage statistics
+Z |00        |03Show z-lines (IP address mask bans)
+
+|11/USERHOST [nickname]
+|03Returns the hostname and nickname of a user, and some other miscellanious 
+information.
+
+|11/AWAY {message}
+|03If a message is given, marks you as being away, otherwise removes your away 
+status and previous message
+
+|11/ISON [nick] {[nick]...}
+|03Returns a subset of the nicks you give, showing only those that are currently 
+online.
+
+|11/SUMMON [user]
+|03Summons a user from the shell where the ircd is running onto irc. This command 
+is deprecated in the current protocol.
+
+|11/USERS
+|03Shows users logged into the shell where the ircd is running. This command is 
+deprecated in the current protocol.
+
+|11/INVITE {[nick] [channel]}
+|03Invites a user to a channel. If the channel is +A, any user, channel op or not,
+may invite any other user to the channel, so long as they are a member of that
+channel and are not banned. Otherwise, if +A is NOT set only channel
+half-operators and above may invite users into the channel. It is completely
+independent of +i.
+
+If no parameters are given, the channels you are currently invited to but have 
+not yet joined are listed.
+
+|11/PASS [password]
+|03This command is used by your irc client when setting up your irc session, and 
+should not be issued by a fully connected client.
+
+|11/WHOWAS [nick]
+|03Returns a list of times the user was last seen on irc along with the time they 
+were last seen and their server.
+
+|11/WHOIS [nick] {server}
+|03Returns the WHOIS information of a user, their channels, hostname, etc. If a
+second nickname or server is provided, then a whois is performed from the 
+server where the user is actually located rather than locally, showing idle and
+signon times.
+
+|11/TIME {servermask}
+|03Returns the local time of the server, or remote time of another server.
+
+|11/LINKS
+|03Shows all servers linked to this one.
+
+|11/MAP
+|03Shows a graphical representation of all users and servers on the network.
+
+|11/SERVER
+|03This command is a booby-trap which will cause all opers to be notified of 
+possible malicious activity. InspIRCd does not support the RFC1459 /SERVER 
+command on ports marked as client ports, neither does it accept client commands
+such as /NICK and /USER on ports designated for server connections. 
+
+|01 ‹‹‹ |07                           |09‹‹‹|01‹|07                                  
+|09|17±≤|01|16 €€|07                          |09€|17±|07|16 |01ﬂﬂ|07                                  
+|09|17∞∞|01|16 €€|07  |09‹|17≤|16ﬂ‹|01‹|07  |09‹|17ﬂ|16ﬂ|01€‹|07  |09|17≤≤|16ﬂ|17∞|01|16‹|07     |09|17∞|01|16€|07     |09‹|17ﬂ|01|16ﬂ€‹|07  |09€|17ﬂ|01|16ﬂ€‹ﬂ€‹|07  |09€|17ﬂ|01|16ﬂ€‹ﬂ€‹|07  |09‹€ﬂﬂ|01€
+|09|17∞|01|16€ €€|07  |09|17±∞|07|16 |09|17±|01|16€|07  |09|17∞|01|16€ﬂﬂﬂ|07  |09|17±∞|07|16        |01€€|07 |09|17∞|01|16€|07  |09|17∞|01|16€|07 |01€€|07  |09|17∞|01|16€|07 |01€€|07 |01€€|07  |09|17∞|01|16€|07 |01€€|07 |01€€|07  |01‹|07 |01ﬂ€‹
+ ﬂﬂﬂ |00 |07 |01€|09|17∞|01|16ﬂﬂ|07    |01ﬂﬂﬂﬂ|00 |07 |01ﬂﬂ|07   |00 |07     |01ﬂﬂﬂﬂ|00 |07  |01ﬂﬂﬂ|07 |00 |07 |01ﬂﬂ|07 |01ﬂﬂ|07 |01ﬂﬂ|00 |07 |01ﬂﬂ|07 |01ﬂﬂ|07 |01ﬂﬂ|00 |07 |01ﬂﬂﬂﬂﬂ
+|07       |01€€|07                                                             
+        |01ﬂ|07   |00 |07                                                         
+|11/WALLOPS [message]
+|03Sends a message to all users who have usermode +w set.
+
+|11/KLINE [user@host] {[duration] :[reason]}
+|03Sets or removes a k-line (host based ban) on a host and ident mask. You must
+specify at least 3 parameters to add a ban, and one parameter to remove a ban
+(just the user@host section). The duration may be specified in seconds, or in
+the following format 1y2w3d4h5m6s - meaning one year, two weeks, three days, 4 
+hours, 5 minutes and 6 seconds. All fields in this format are optional.
+
+Please note that KLINE is checked before the user registers in a similar way to
+ZLINE if it is a '*@ip' format of mask. This prevents waste of resources in
+needless DNS and ident lookups etc.
+
+|11/ZLINE [ipmask] {[duration] :[reason]}
+|03Sets or removes a z-line (ip based ban) on an ip range mask. You must specify 
+at least 3 parameters to add a ban, and one parameter to remove a ban (just the
+ipmask). The duration may be specified in seconds, or in the following format 
+1y2w3d4h5m6s - meaning one year, two weeks, three days, 4 hours, 5 minutes and 
+6 seconds. All fields in this format are optional.
+
+|11/QLINE [nickmask] {[duration] :[reason]}
+|03Sets or removes a q-line (global nick based ban) on a nick mask. You must 
+specify at least 3 parameters to add a ban, and one parameter to remove a ban 
+(just the nickmask). The duration may be specified in seconds, or in the 
+following format 1y2w3d4h5m6s - meaning one year, two weeks, three days, 4 
+hours, 5 minutes and 6 seconds. All fields in this format are optional.
+
+|11/GLINE [user@host] {[duration] :[reason]}
+|03Sets or removes a g-line (global host based ban) on host mask. You must specify
+at least 3 parameters to add a ban, and one parameter to remove a ban (just 
+the user@host section). The duration may be specified in seconds, or in the 
+following format 1y2w3d4h5m6s - meaning one year, two weeks, three days, 4
+ hours, 5 minutes and 6 seconds. All fields in this format are optional.
+
+Please note that GLINE is checked before the user registers in a similar way to
+ZLINE if it is a '*@ip' format of mask. This prevents waste of resources in
+needless DNS and ident lookups etc.
+
+|11/ELINE [user@host] {[duration] :[reason]}
+|03Sets or removes a e-line (local ban exception) on host mask. You must specify 
+at least 3 parameters to add an exception, and one parameter to remove an 
+exception (just the user@host section). The duration may be specified in 
+seconds, or in the following format 1y2w3d4h5m6s - meaning one year, two weeks,
+three days, 4 hours, 5 minutes and 6 seconds. All fields in this format are 
+optional.
+
+|11/DIE [password]
+|03If the correct password is provided, and you are an operator, this command will
+shut down the local server.
+
+|11/RESTART [password]
+|03If the correct password is provided, and you are an operator, this command will
+restart the local server.
+
+|11/KILL [nickname-list] [reason]
+|03This command will disconnect a user from IRC with the given reason. You may 
+provide the nicknames of multiple users in the first parameter seperated by 
+commas. If you disconnect yourself, parsing of the command will stop at the 
+position of your nickname in the list.
+
+|11/REHASH {servername}
+|03This command will cause the server configuration file to be re-read and values 
+re-initialised. All modules which are able will reload their settings and 
+re-initialize. The core will also unload any modules which you have removed 
+from the config, and load any new modules which you have added since the 
+last time the Configuration file was read. If a server name is provided, the 
+remote server given is rehashed instead of the local one.
+
+Unlike many other ircd programs, REHASH commands continue along their path 
+after being actioned upon, so for example "/REHASH *" will rehash all servers 
+on the network including the local one.
+
+|11/TRACE [nick|user@host|servermask]
+|03This command will provide a list of all users and servers which must be passed 
+through or over to reach a given object (server or user)
+
+|11/CONNECT [servermask] {servermask}
+|03Create a connection to the given servermask. You must have configured the 
+server for linking in your configuration file, and provided a password. If you 
+specify more than one parameter, the first parameter is that of a server to be 
+instructed to connect to the second, remotely.
+
+|11/SQUIT [servermask]
+|03Disconnect a locally connected server matching servermask from the network.
+
+|11/RSQUIT [servermask]
+|03This causes a remote server, specified by the servermask, to disconnect from 
+the network without desyncing the network. 

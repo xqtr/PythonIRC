@@ -1,0 +1,30 @@
+# All aliases must start with /
+# An alias can have multiple commands, seperate them with the ; (semicolon)
+# Lines not beginning with / will be ignored as comments
+
+# Variables
+# |DT : Current time
+# |DA : Current date
+# |UN : User real name
+# |UH : Your irc handle / nick
+# |CR : New line
+
+# |CN : current channel name
+# |CM : current channel mode (+itl)
+# |CT : current channel topic
+# |CU : current channel count of users
+
+# |PM : part message
+# |QM : quit message
+
+
+# Parameters
+# $1, $2, $3... will be replaced by the values you apply to the alias
+
+/j /join $1
+/h /help $1
+/enter /say |UH walks into |CN ; /say |UH says Hello to Everyone!
+/w /whois $1
+/p /part #
+/c /connect $1
+/uptime /raw stats u
